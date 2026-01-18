@@ -1,77 +1,76 @@
 # Legram
 
-**日本語** | [English](README_EN.md)
-
+[日本語](README_JP.md) | **English**
 
 ![Legram Screenshot](assets/screenshot1.png)
 
-Legram は、Google Gemini を搭載したプロフェッショナルグレードの **AI駆動型 空間ボクセルエンジン** です。
-従来の「プリセット再生」だけでなく、自然言語プロンプトから **3Dマトリックスパターンをリアルタイムに生成（コーディング）** することが可能です。CADのような精密な操作感と、ダイナミックなデータ視覚化を融合させました。
+Legram is a professional-grade **AI-Powered Spatial Voxel Engine** powered by Google Gemini.
+Beyond simple preset playback, it enables **real-time generation (coding) of 3D matrix patterns** from natural language prompts. It fuses CAD-like precision with dynamic data visualization.
 
-## 主な機能
+## Key Features
 
-### 🧠 AI マトリックス・ジェネレーション
-Gemini モデルが「Voxel Engine Orchestrator」として機能し、解像度に依存しないジェネレーティブ・アートを生成します。
+### 🧠 AI Matrix Generation
+The Gemini model functions as a "Voxel Engine Orchestrator," generating resolution-independent generative art.
 
 <p align="center">
   <img src="assets/screenshot2.png" width="45%" alt="AI Conversation" />
   <img src="assets/screenshot3.png" width="45%" alt="Generated Matrix" />
 </p>
 <p align="center">
-  <em>自然言語での指示（左）と、生成されたマトリックス（右）</em>
+  <em>Natural language prompt (left) and resulting matrix (right)</em>
 </p>
 
-- **Shader Mode (シェーダーモード)**: `Math.sin(nx * ...)` のような数式ロジックをAIが生成。解像度（Grid Size）が変わってもパターンが崩れない「Normalized Coordinates (0.0-1.0)」ベースのレンダリング。
-- **Particle Mode (パーティクルモード)**: 物理演算（重力、速度、寿命）を持つパーティクルシステムをAIが構築。「雨」「爆発」「上昇」などの挙動を自然言語で指示可能。
+- **Shader Mode**: AI generates mathematical logic like `Math.sin(nx * ...)`. It uses "Normalized Coordinates (0.0-1.0)" rendering, so patterns remain consistent regardless of Grid Size.
+- **Particle Mode**: AI constructs particle systems with physics (gravity, velocity, lifetime). Behaviors like "Rain," "Explosion," and "Rise" can be commanded via natural language.
 
-### 🎛️ アルゴリズム・プリセット
-即座に使用できる多様なビルトイン・パターン：
-- **Wave**: 位相ズレを利用した波紋効果
-- **Pulse**: ビートに同期するエネルギーパルス
-- **Rain / Fireworks / Fountain**: 物理シミュレーションライクなエフェクト
-- **DNA / Spiral**: 幾何学的な回転アニメーション
+### 🎛️ Algorithmic Presets
+A variety of built-in patterns ready for immediate use:
+- **Wave**: Ripple effects utilizing phase shifting.
+- **Pulse**: Energy pulses synchronized to the beat.
+- **Rain / Fireworks / Fountain**: Physics-simulation-like effects.
+- **DNA / Spiral**: Geometric rotating animations.
 
-### 🎵 オーディオ・リアクティビティ & BPM Sync
-- **マイク入力連動**: 周波数帯域をリアルタイムに解析し、3Dバーとして視覚化。
-- **BPM Sync**: タップテンポによるBPM設定、および小節（Bar）単位での正確なアニメーション同期。
+### 🎵 Audio Reactivity & BPM Sync
+- **Microphone Input**: Real-time analysis of frequency bands visualized as 3D bars.
+- **BPM Sync**: BPM setting via tap tempo and precise animation synchronization by bar units.
 
-### 🛠️ プロフェッショナル・コントロール
-- **JSON エディタ**: 生成されたボクセルデータやAIのレスポンスを直接編集・保存可能。
-- **可変グリッドサイズ**: 8x8x8 から 32x32x32（あるいはそれ以上）まで、ハードウェア負荷に合わせて動的に解像度を変更可能。
-- **CADライクな操作**: 自由なカメラワーク (Orbit Controls) と直感的なパラメータ調整。
+### 🛠️ Professional Control
+- **JSON Editor**: Directly edit and save generated voxel data and AI responses.
+- **Variable Grid Size**: Dynamically change resolution from 8x8x8 to 32x32x32 (or more) to match hardware performance.
+- **CAD-like Operation**: Free camera movement (Orbit Controls) and intuitive parameter adjustments.
 
-## セットアップと実行
+## Setup & Run
 
-### 前提条件
-- Node.js がインストールされていること。
-- Google AI Studio で取得した Gemini API キー。
+### Prerequisites
+- Node.js installed.
+- Gemini API Key obtained from Google AI Studio.
 
-### インストール手順
+### Installation
 
-1. リポジトリをクローンし、依存関係をインストールします。
+1. Clone the repository and install dependencies.
    ```bash
    npm install
    ```
 
-2. `.env.local` ファイルを作成し、Gemini API キーを設定します。
+2. Create a `.env.local` file and set your Gemini API Key.
    ```bash
    GEMINI_API_KEY=your_api_key_here
    ```
-   *(注意: Vite環境のため、接頭辞 `VITE_` が必要になる場合があります。コードベースの設定を確認してください)*
+   *(Note: Since this is a Vite environment, a `VITE_` prefix might be required depending on your configuration, but verified config uses `GEMINI_API_KEY` mapping)*
 
-3. アプリケーションを起動します。
+3. Start the application.
    ```bash
    npm run dev
    ```
 
-## 技術スタック
+## Tech Stack
 
 - **Frontend**: React 19, TypeScript, Vite
 - **3D Graphics**: Three.js (@react-three/fiber, @react-three/drei)
-- **AI**: Google GenAI SDK (Gemini/Flash)
+- **AI**: Google GenAI SDK (Gemini Pro/Flash)
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
 
-## ライセンス
+## License
 
 [MIT License](LICENSE)
