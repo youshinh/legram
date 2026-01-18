@@ -1,0 +1,8 @@
+{
+  "name": "Legram",
+  "description": "A professional-grade 3D LED matrix simulator with AI capabilities, CAD-like controls, and dynamic data visualization.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
