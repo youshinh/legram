@@ -250,12 +250,12 @@ export default function App() {
     >
       <style>{`
         @keyframes measure-pulse {
-          0%, 100% { opacity: 0.25; filter: drop-shadow(0 0 0px transparent); }
-          5% { opacity: 1; filter: drop-shadow(0 0 8px white); }
-          20% { opacity: 0.25; filter: drop-shadow(0 0 0px transparent); }
+          0%, 100% { opacity: 0.5; box-shadow: 0 0 0px transparent; }
+          5% { opacity: 1; box-shadow: 0 0 15px rgba(255,255,255,0.5); text-shadow: 0 0 10px white; }
+          30% { opacity: 0.5; box-shadow: 0 0 0px transparent; }
         }
         .bpm-pulse {
-          animation: measure-pulse ${measureDuration}s infinite cubic-bezier(0.4, 0, 0.2, 1);
+          animation: measure-pulse ${measureDuration}s infinite cubic-bezier(0.1, 0, 0.2, 1);
         }
       `}</style>
       
@@ -309,13 +309,13 @@ export default function App() {
       </div>
 
       {!isControlsOpen && (
-        <div className="md:hidden fixed bottom-10 left-1/2 -translate-x-1/2 w-[92%] bg-black/80 backdrop-blur-3xl border border-white/10 rounded-full p-2 flex items-center gap-3 z-50 animate-in fade-in slide-in-from-bottom-8 duration-700 shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+        <div className="md:hidden fixed bottom-10 left-1/2 -translate-x-1/2 w-[92%] bg-black/40 backdrop-blur-3xl border border-white/10 rounded-full p-2 flex items-center gap-3 z-50 animate-in fade-in slide-in-from-bottom-8 duration-700 shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
           <div className="flex items-center gap-3 px-1">
             <button 
               onClick={(e) => { e.stopPropagation(); setPlayback(p => ({ ...p, isPlaying: !p.isPlaying })); }}
               className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center active:scale-90"
             >
-              {playback.isPlaying ? <Pause size={22} fill="currentColor" /> : <Play size={22} fill="currentColor" className="ml-1" />}
+              {playback.isPlaying ? <Pause size={16} fill="currentColor" /> : <Play size={16} fill="currentColor" className="ml-0.5" />}
             </button>
             <button 
               onClick={(e) => { 
@@ -324,7 +324,7 @@ export default function App() {
                 setPlayback(p => ({ ...p, currentFrame: 0 })); 
                 handleBpmTap();
               }}
-              className="text-white/30 active:scale-90 p-2 active:text-cyan-400 transition-colors bpm-pulse"
+              className="text-white/80 active:scale-90 p-2 active:text-cyan-400 transition-colors bpm-pulse rounded-full"
             >
               <RotateCcw size={20} />
             </button>

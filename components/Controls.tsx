@@ -96,12 +96,13 @@ const Controls: React.FC<ControlsProps> = memo(({
     { id: 'random', label: 'Random', icon: Box },
   ];
 
-  // パネルは左側から出るように変更
+  // パネルのスタイル定義
+  // PC表示(md)の設定に合わせて、モバイルも bg-white/5 backdrop-blur-xl に統一
   const panelClasses = `
     fixed md:absolute 
     top-0 left-0 md:top-8 md:left-8 
     w-full md:w-80 h-full md:h-[calc(100vh-64px)] 
-    bg-black/95 md:bg-white/5 backdrop-blur-3xl md:backdrop-blur-xl 
+    bg-white/5 backdrop-blur-xl
     border-r md:border border-white/10 md:rounded-3xl 
     shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col z-[400] transition-all duration-500 ease-out
     ${isOpen ? 'translate-x-0' : '-translate-x-full md:opacity-0 md:scale-95 pointer-events-none'}
@@ -150,7 +151,7 @@ const Controls: React.FC<ControlsProps> = memo(({
                   onClick={() => setPlayback(p => ({ ...p, isPlaying: !p.isPlaying }))} 
                   className="w-16 h-16 md:w-14 md:h-14 rounded-full bg-white text-black flex items-center justify-center active:scale-90 transition-transform"
                 >
-                  {playback.isPlaying ? <Pause size={28} fill="currentColor" /> : <Play size={28} fill="currentColor" className="ml-1" />}
+                  {playback.isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" className="ml-0.5" />}
                 </button>
                 <button 
                   onClick={() => {

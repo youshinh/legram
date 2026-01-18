@@ -1,17 +1,22 @@
-
 import React, { useRef, useMemo, useEffect } from 'react';
-import { useFrame, ThreeElements } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { GridSize, VoxelData } from '../types';
 
 // Extend the JSX namespace to include Three.js elements
-declare global {
-  namespace JSX {
-    interface IntrinsicElements extends ThreeElements {}
-  }
-}
+// declare global {
+//   namespace JSX {
+//     interface IntrinsicElements {
+//       instancedMesh: any;
+//       sphereGeometry: any;
+//       meshBasicMaterial: any;
+//       gridHelper: any;
+//       color: any;
+//     }
+//   }
+// }
 
 interface VoxelSceneProps {
   data: VoxelData;
