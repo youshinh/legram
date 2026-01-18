@@ -1,5 +1,8 @@
 # Legram
 
+**日本語** | [English](README_EN.md)
+
+
 ![Legram Screenshot](assets/screenshot1.png)
 
 Legram は、Google Gemini を搭載したプロフェッショナルグレードの **AI駆動型 空間ボクセルエンジン** です。
@@ -9,6 +12,14 @@ Legram は、Google Gemini を搭載したプロフェッショナルグレー�
 
 ### 🧠 AI マトリックス・ジェネレーション
 Gemini モデルが「Voxel Engine Orchestrator」として機能し、解像度に依存しないジェネレーティブ・アートを生成します。
+
+<p align="center">
+  <img src="assets/screenshot2.png" width="45%" alt="AI Conversation" />
+  <img src="assets/screenshot3.png" width="45%" alt="Generated Matrix" />
+</p>
+<p align="center">
+  <em>自然言語での指示（左）と、生成されたマトリックス（右）</em>
+</p>
 
 - **Shader Mode (シェーダーモード)**: `Math.sin(nx * ...)` のような数式ロジックをAIが生成。解像度（Grid Size）が変わってもパターンが崩れない「Normalized Coordinates (0.0-1.0)」ベースのレンダリング。
 - **Particle Mode (パーティクルモード)**: 物理演算（重力、速度、寿命）を持つパーティクルシステムをAIが構築。「雨」「爆発」「上昇」などの挙動を自然言語で指示可能。
@@ -44,7 +55,7 @@ Gemini モデルが「Voxel Engine Orchestrator」として機能し、解像度
 
 2. `.env.local` ファイルを作成し、Gemini API キーを設定します。
    ```bash
-   VITE_GEMINI_API_KEY=your_api_key_here
+   GEMINI_API_KEY=your_api_key_here
    ```
    *(注意: Vite環境のため、接頭辞 `VITE_` が必要になる場合があります。コードベースの設定を確認してください)*
 
@@ -57,7 +68,7 @@ Gemini モデルが「Voxel Engine Orchestrator」として機能し、解像度
 
 - **Frontend**: React 19, TypeScript, Vite
 - **3D Graphics**: Three.js (@react-three/fiber, @react-three/drei)
-- **AI**: Google GenAI SDK (Gemini 1.5 Pro/Flash)
+- **AI**: Google GenAI SDK (Gemini/Flash)
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
 
